@@ -57,7 +57,6 @@ public class MainActivity extends Activity {
 
     public void addListenerOnSpinnerItemSelection() {
         spinner = (Spinner) findViewById(R.id.spinner);
-        //spinner.setOnItemSelectedListener();
     }
 
 
