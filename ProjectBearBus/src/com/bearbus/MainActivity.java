@@ -35,13 +35,14 @@ public class MainActivity extends Activity {
 		Parse.initialize(this, PARSE_APP_ID, PARSE_APP_ID);
 		PushService.setDefaultPushCallback(this, MainActivity.class);
 
-
+        //List for stops
         List<String> SpinnerArray = new ArrayList<String>();
         SpinnerArray.add("Parking Lot 3");
         SpinnerArray.add("Parking Lot 11");
         SpinnerArray.add("Parking Lot 35");
         SpinnerArray.add("Rercreation Center");
         SpinnerArray.add("Meadow Brook Road");
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, SpinnerArray);
