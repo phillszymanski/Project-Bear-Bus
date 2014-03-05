@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		Parse.initialize(this, PARSE_APP_ID, PARSE_APP_ID);
 		PushService.setDefaultPushCallback(this, MainActivity.class);
-
+        //hi
         //List for stops
         List<String> SpinnerArray = new ArrayList<String>();
         SpinnerArray.add("Parking Lot 3");
