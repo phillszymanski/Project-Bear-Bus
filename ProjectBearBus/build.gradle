@@ -10,11 +10,18 @@ apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
+    compile 'com.google.android.gms:play-services:3.1.36'
+
 }
 
 android {
     compileSdkVersion 19
     buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 19
+    }
 
     sourceSets {
         main {
@@ -36,7 +43,7 @@ android {
         // conflict with src/ being used by the main source set.
         // Adding new build types or product flavors should be accompanied
         // by a similar customization.
-        debug.setRoot('build-types/debug')
-        release.setRoot('build-types/release')
-    }
+    debug.setRoot('build-types/debug')
+release.setRoot('build-types/release')
+}
 }

@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Button;
+import android.view.View.OnClickListener;
 
 import com.parse.Parse;
 import com.parse.PushService;
@@ -23,7 +25,8 @@ public class MainActivity extends Activity {
 	private final String PARSE_APP_ID = "Hr5DPwQzhmzzST1sNzME8ssu3zaDxRZgtLO10Zxk";
 	private final String PARSE_CLIENT_KEY = "49AgCaNyWzaFFCgHFPgS3NK0lEjTpLNPDDYBrswX";
     ArrayList stops= new ArrayList();
-    Spinner spinner;
+    private Spinner spinner;
+    private Button btnRequest;
 
 
 
@@ -34,6 +37,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		Parse.initialize(this, PARSE_APP_ID, PARSE_APP_ID);
 		PushService.setDefaultPushCallback(this, MainActivity.class);
+        this.btnRequest = (Button) this.findViewById(R.id.request);
+        this.btnRequest.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         //List for stops
         List<String> SpinnerArray = new ArrayList<String>();
@@ -66,6 +76,10 @@ public class MainActivity extends Activity {
 
             }
 
+
+
+
+
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
                 // TODO Auto-generated method stub
@@ -83,19 +97,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-    /*public void addItemsOnSpinner()
-    {
-        spinner = (Spinner) findViewById(R.id.spinner);
-        stops.add("Parking Lot 3");
-        stops.add("Parking Lot 11");
-        stops.add("Parking Lot 35");
-        stops.add("Meadow Brook Road");
-        stops.add("Recreation Center");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stops);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner Items = (Spinner) findViewById(R.id.spinner);
-        Items.setAdapter(adapter);
-    }*/
+
 
     public void addListenerOnSpinnerItemSelection() {
         spinner = (Spinner) findViewById(R.id.spinner);

@@ -3,6 +3,7 @@
 
     <string name="app_name">Project Bear Bus</string>
     <string name="action_settings">Settings</string>
+    <string name="btnRequest">Request a Ride</string>
 
     <string-array name="stops">
         <item>Parking Lot 3</item>
