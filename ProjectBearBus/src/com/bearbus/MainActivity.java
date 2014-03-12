@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		Parse.initialize(this, PARSE_APP_ID, PARSE_APP_ID);
 		PushService.setDefaultPushCallback(this, MainActivity.class);
+        //button
         this.btnRequest = (Button) this.findViewById(R.id.request);
         this.btnRequest.setOnClickListener(new View.OnClickListener() {
 
