@@ -1,9 +1,11 @@
 package com.bearbus;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.AdapterView;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
@@ -15,9 +17,10 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.view.View.OnClickListener;
-
+import android.content.DialogInterface;
 import com.parse.Parse;
 import com.parse.PushService;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -42,7 +45,7 @@ public class MainActivity extends Activity {
         this.btnRequest.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                finish();
+
             }
         });
 
@@ -58,7 +61,7 @@ public class MainActivity extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, SpinnerArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.pspinner);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -101,7 +104,7 @@ public class MainActivity extends Activity {
 
 
     public void addListenerOnSpinnerItemSelection() {
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.pspinner);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
     }
 

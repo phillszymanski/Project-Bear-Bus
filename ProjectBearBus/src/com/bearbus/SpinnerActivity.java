@@ -12,7 +12,7 @@ public class SpinnerActivity extends Activity implements AdapterView.OnItemSelec
 
     public void populateSpinner()
     {
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.pspinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.stops, android.R.layout.simple_spinner_item);
@@ -32,7 +32,7 @@ public class SpinnerActivity extends Activity implements AdapterView.OnItemSelec
         // Another interface callback
     }
 
-    Spinner spinner = (Spinner) findViewById(R.id.spinner);
+    Spinner spinner = (Spinner) findViewById(R.id.pspinner);
     //spinner.setOnItemSelectedListener(this);
 
 }
